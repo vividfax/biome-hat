@@ -35,7 +35,7 @@ function draw() {
 		return;
 	}
 	const canvasScale = 0.8;
-	const canvasWidth = canvasScale * (cellSize * stitches + 215);
+	const canvasWidth = canvasScale * (cellSize * stitches + 235);
 	let canvasHeight = canvasScale * (cellSize * rows + 85);
 
 	if (canvasHeight < 385) {
@@ -50,7 +50,7 @@ function draw() {
 	translate(40, 220);
 	drawKey();
 
-	translate(130, -176);
+	translate(150, -176);
 	drawChart();
 
 	translate(-cellSize / 2, -cellSize / 2);
@@ -96,7 +96,7 @@ function change() {
 
 function drawKey() {
 
-	const labels = ['knit with light', 'knit with dark', 'k2tog with light', 'k2tog with dark', 'no stitch'];
+	const labels = ['knit with colour 1', 'knit with colour 2', 'k2tog with colour 1', 'k2tog with colour 2', 'no stitch'];
 	const lineHeight = 30;
 
 	textSize(13);
@@ -151,16 +151,16 @@ function drawChart() {
 
 				if (decreaseStitch && emptyStitches == h) {
 					if (noise == 0) {
-						stitchType = 'k2tog with light';
+						stitchType = 'k2tog with colour 1';
 					} else {
-						stitchType = 'k2tog with dark';
+						stitchType = 'k2tog with colour 2';
 					}
 				} else if (emptyStitches - h > 0) {
 					stitchType = 'no stitch';
 				} else if (noise == 0) {
-					stitchType = 'knit with light';
+					stitchType = 'knit with colour 1';
 				} else {
-					stitchType = 'knit with dark';
+					stitchType = 'knit with colour 2';
 				}
 				drawStitch(i * cellSize, j * cellSize, stitchType);
 			}
@@ -239,16 +239,16 @@ function drawStitch(x, y, type) {
 			fill('#ccc');
 			rect(x, y, cellSize, cellSize);
 			break;
-		case 'knit with light':
+		case 'knit with colour 1':
 			break;
-		case 'knit with dark':
+		case 'knit with colour 2':
 			ellipse(x, y, cellSize / 3);
 			break;
-		case 'k2tog with light':
+		case 'k2tog with colour 1':
 			stroke('#555');
 			line(x - 2, y + 2, x + 2, y - 2);
 			break;
-		case 'k2tog with dark':
+		case 'k2tog with colour 2':
 			stroke('#555');
 			line(x - 2, y + 2, x + 2, y - 2);
 			noStroke();
