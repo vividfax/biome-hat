@@ -20,13 +20,13 @@ function setup() {
 	let canvas = createCanvas(cellSize * stitches + 200, cellSize * rows + 70);
 	canvas.parent('sketch-holder');
 
+	background(0);
 	makeControls();
 
 	pixelDensity(8);
 	noStroke();
 	rectMode(CENTER);
 
-	background(0);
 	// draw();
 }
 
