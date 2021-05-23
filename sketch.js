@@ -20,51 +20,50 @@ function setup() {
 	let canvas = createCanvas(cellSize * stitches + 200, cellSize * rows + 70);
 	canvas.parent('sketch-holder');
 
-	background(0);
 	makeControls();
 
-	pixelDensity(8);
+	// pixelDensity(8);
 	noStroke();
 	rectMode(CENTER);
 
-	// draw();
+	draw();
 }
 
-// function draw() {
+function draw() {
 
-// 	if (!change()) {
-// 		return;
-// 	}
-// 	const canvasScale = 0.8;
-// 	const canvasWidth = canvasScale * (cellSize * stitches + 235);
-// 	let canvasHeight = canvasScale * (cellSize * rows + 85);
+	if (!change()) {
+		return;
+	}
+	const canvasScale = 0.8;
+	const canvasWidth = canvasScale * (cellSize * stitches + 235);
+	let canvasHeight = canvasScale * (cellSize * rows + 85);
 
-// 	if (canvasHeight < 385) {
-// 		canvasHeight = 385;
-// 	}
+	if (canvasHeight < 385) {
+		canvasHeight = 385;
+	}
 
-// 	resizeCanvas(canvasWidth, canvasHeight);
-// 	scale(canvasScale);
+	resizeCanvas(canvasWidth, canvasHeight);
+	scale(canvasScale);
 
-// 	background('#fff');
+	background('#fff');
 
-// 	translate(40, 220);
-// 	drawKey();
+	translate(40, 220);
+	drawKey();
 
-// 	translate(150, -176);
-// 	drawChart();
+	translate(150, -176);
+	drawChart();
 
-// 	translate(-cellSize / 2, -cellSize / 2);
-// 	drawGuides();
+	translate(-cellSize / 2, -cellSize / 2);
+	drawGuides();
 
-// 	drawLabel();
+	drawLabel();
 
-// 	updateClass('.Stitches', stitches);
-// 	updateClass('.Rows', rows);
-// 	updateClass('.Scale', patternScale.toFixed(1));
-// 	updateClass('.Texture', texture.toFixed(1));
-// 	updateClass('.Interval', stitches / getSections(stitches) / 2);
-// }
+	updateClass('.Stitches', stitches);
+	updateClass('.Rows', rows);
+	updateClass('.Scale', patternScale.toFixed(1));
+	updateClass('.Texture', texture.toFixed(1));
+	updateClass('.Interval', stitches / getSections(stitches) / 2);
+}
 
 function updateClass(className, html) {
 
