@@ -1,4 +1,4 @@
-# Terrain Hat
+# Biome Hat
 
 Knitting chart generator for the Biome Hat; a hat that uses simplex noise as a colourwork pattern.
 
